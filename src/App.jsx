@@ -5,6 +5,9 @@ import OrderContainer from "./Component/OrderContainer";
 
 import Heading from "./Component/Heading";
 import States from "./Component/States";
+// import { ToastContainer } from "react-toastify/unstyled";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const loadorders = () => fetch("/orders.json").then((res) => res.json());
 
@@ -26,6 +29,7 @@ const App = () => {
           <OrderContainer promise={ordersPromise}></OrderContainer>
         </Suspense>
       </section>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
